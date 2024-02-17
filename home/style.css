@@ -1,0 +1,191 @@
+body {
+    background-color: #fff; /* White background */
+    color: #333; /* Dark text color */
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #3498db; /* Blue header background */
+    padding: 20px;
+    text-align: center;
+    color: #fff; /* White text color */
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+.balance-container,
+.conversion-rates-container {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.OtherBalenceContainer {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    cursor: pointer;
+    font-size: 1.5em;
+    transform: scale(1.5);
+}
+
+.balance-container {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.graph {
+    width:50%;
+    max-width:50%;
+}
+
+.graph1 {float:left}
+.graph2 {float:right}
+
+.ButtonContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Ensure the container takes full width */
+}
+
+.ActionButton {
+    background:    #3498db;
+    border-radius: 11px;
+    font: normal bold 26px/1 "Open Sans", sans-serif;
+    border: none;
+    color: white;
+    padding: 20px 45px;
+    width: 10%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.popup {
+    padding: 20px 45px;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    width: 60%;
+    height: 60%;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+
+.popup-content {
+    margin-bottom: 40%;
+    text-align: center;
+}
+
+#dropdown, #amount1, #amount2, #amount3, #confirmBtn {
+    padding: 10px;
+    width: 40%;
+    border: 1px solid #3498db;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 5%;
+}
+
+#confirmBtn {
+    background: #3498db;
+    color: white;
+    cursor: pointer;
+    margin-top: 20%;
+}
+
+.DropdownTitle {
+    color: #333;
+}
+
+.amount1 {margin-left: 20%;}
+.amount2 {margin-left: 20%;}
+.amount3 {margin-left: 20%;}
+.Despost {margin-left: auto;} /* Push to the left edge */
+.Trade {margin: 0 auto;} /* Center */
+.Withdraw {margin-right: auto;} /* Push to the right edge */
+
+/* Mobile layout */
+@media only screen and (max-width: 600px) {
+    .balance-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .balance-container > div {
+        text-align: center;
+    }
+
+    .conversion-rates-container {
+        order: 1;
+        width: 80%;
+        padding: 2%;
+    }
+
+    .graph > div {
+        display: none;
+    }
+
+    .ButtonContainer {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Despost {
+        width: 70%;
+        margin: 0 auto 2%;
+    } 
+
+    .Trade {
+        width: 70%;
+        margin: 0 auto 2%;
+    }
+    
+    .Withdraw {
+        width: 70%;
+        margin: 0 auto 2%;
+    }
+
+    .popup {
+        width: 90%;
+    }
+
+    .DropdownTitle {
+        width: 90%;
+    }
+}

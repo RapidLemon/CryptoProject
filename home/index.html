@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="Data\favicon.ico">
+
+    <title>CRYPTO PROJECT</title>
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="script.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Crypto Project</h1>
+    </header>
+
+    <main>
+
+        <span class="close-btn" onclick='setCookie("LoginID", "", 0)'>&times;</span>
+
+        <div class="balance-container" onclick="AccountBreakDown()">
+            <div class="conversion-rates-container">
+                <p id="UNTtoEUR">UNT to EUR: 1.12</p>
+            </div>
+            
+            <div>
+                <h2>Total Balance (UNT)</h2>
+                <p id="TotalBalUNT">UNT 1,000,000</p>
+                <h2>Total Balance (EUR)</h2>
+                <p id="TotalBalEUR">€ 0</p>
+            </div>
+
+            <div class="conversion-rates-container">
+                <p id="EURtoUNT">EUR to UNT: 0.74</p>
+            </div>
+        </div>
+
+        <div id="Graph1" class="graph graph1"></div>
+        <div id="Graph2" class="graph graph2"></div>
+
+        <div class="ButtonContainer">
+            <div onclick="openPopup('Despost') " class="ActionButton Despost" id="Deposit">Deposit</div>
+            <div onclick="openPopup('Trade')   " class="ActionButton Trade">Trade</div>
+            <div onclick="openPopup('Withdraw')" class="ActionButton Withdraw">Withdraw</div>
+        </div>
+
+
+        <div id="TradePopup" class="popup">
+            <div class="popup-content">
+                <span class="close-btn" onclick="closePopup()">&times;</span>
+                <h1 style="color: #3498db;">Trade</h1>
+                <label for="dropdown">Select an option:</label>
+                <select id="dropdown"></select>
+                <br>
+                <label for="amount">Enter amount:</label>
+                <input type="number" id="amount1" min="0" placeholder="0">
+                <br>
+                <button id="confirmBtn" onclick="confirmAction()">Confirm</button>
+            </div>
+        </div>
+
+        <div id="WithdrawPopup" class="popup">
+            <div class="popup-content">
+                <span class="close-btn" onclick="closePopup()">&times;</span>
+                <h1 style="color: #3498db;">Withdraw</h1>
+                <br>
+                <label for="amount">Enter amount:</label>
+                <input type="number" id="amount2" min="0" placeholder="0">
+                <br>
+                <button id="confirmBtn" onclick="confirmAction()">Confirm</button>
+            </div>
+        </div>
+
+        <div id="DepositPopup" class="popup">
+            <div class="popup-content">
+                <span class="close-btn" onclick="closePopup()">&times;</span>
+                <h1 style="color: #3498db;">Deposit</h1>
+                <br>
+                <label for="amount">Enter amount:</label>
+                <input type="number" id="amount3" min="0" placeholder="0">
+                <br>
+                <button id="confirmBtn" onclick="confirmAction()">Confirm</button>
+            </div>
+        </div>
+
+        <div id="AccountPopup" class="popup" style="height: 70%;">
+            <div class="popup-content">
+                <span class="close-btn" onclick="closePopup()">&times;</span>
+                <h1 style="color: #3498db;">Accounts</h1>
+
+                <div class="OtherBalenceContainer">
+                    <h3>Current Account Balence</h3>
+                    <p id="CurrentBalUNT">0 UNT</p>
+                    <p id="CurrentBalEUR">0 EUR</p>
+                </div>
+
+                <br>
+
+                <div class="OtherBalenceContainer">
+                    <h3>Savings Account Balence</h3>
+                    <p id="SavingsBalUNT">0 UNT</p>
+                    <p id="SavingsBalEUR">0 EUR</p>
+                </div>
+
+
+            </div>
+        </div>
+        
+        <div id="overlay" class="overlay"></div>
+        
+    </main>
+</body>
+</html>
