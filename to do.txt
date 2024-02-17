@@ -1,0 +1,5 @@
+Create a backend in python to:
+update current price
+UBI
+CA tax
+Graphs
